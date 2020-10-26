@@ -10,5 +10,5 @@ Meskipun lukisan bersifat statis, aplikasi kita akan menjadi interaktif! Aplikas
 ### Screenshoot Aplikasi Color My View
 ![Screenshot](https://github.com/nurzainpradana/Color-My-View-App/blob/master/Screenshoot%20Apk.PNG?raw=true)
 
-### Screenshoot Aplikasi Dice Roller Challenge (2 Dadu)
-![Screenshot](https://github.com/nurzainpradana/Dice-Roller/blob/master/Screenshoot%20Apk%20Challenge.PNG?raw=true)
+### Screenshoot Aplikasi Color My View ( Mengubah background menjadi gambar )
+![Screenshot](https://github.com/nurzainpradana/Color-My-View-App/blob/master/Screenshoot%20Apk%20Challenge.PNG?raw=true)
