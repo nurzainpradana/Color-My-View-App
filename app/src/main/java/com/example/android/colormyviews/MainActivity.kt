@@ -4,9 +4,22 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+    lateinit var redButton: Button
+    lateinit var yellowButton: Button
+    lateinit var greenButton: Button
+
+    lateinit var boxOneText: TextView
+    lateinit var boxTwoText: TextView
+    lateinit var boxThreeText: TextView
+    lateinit var boxFourText: TextView
+    lateinit var boxFiveText: TextView
+
+    lateinit var rootConstraintLayout: View
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -15,16 +28,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setListener() {
-        val boxOneText = findViewById<TextView>(R.id.box_one_text)
-        val boxTwoText = findViewById<TextView>(R.id.box_two_text)
-        val boxThreeText = findViewById<TextView>(R.id.box_three_text)
-        val boxFourText = findViewById<TextView>(R.id.box_four_text)
-        val boxFiveText = findViewById<TextView>(R.id.box_five_text)
+        boxOneText = findViewById(R.id.box_one_text)
+        boxTwoText = findViewById(R.id.box_two_text)
+        boxThreeText = findViewById(R.id.box_three_text)
+        boxFourText = findViewById(R.id.box_four_text)
+        boxFiveText = findViewById(R.id.box_five_text)
 
-        val rootConstraintLayout = findViewById<View>(R.id.constraint_layout)
+        greenButton = findViewById(R.id.green_button)
+        redButton = findViewById(R.id.red_button)
+        yellowButton = findViewById(R.id.yellow_button)
+
+        rootConstraintLayout = findViewById(R.id.constraint_layout)
 
         val clickableViews: List<View> =
-            listOf(boxOneText, boxTwoText, boxThreeText, boxFourText, boxFiveText, rootConstraintLayout)
+            listOf(boxOneText,
+                boxTwoText,
+                boxThreeText,
+                boxFourText,
+                boxFiveText,
+                rootConstraintLayout,
+                yellowButton,
+                redButton,
+                greenButton)
 
         for (item in clickableViews){
             item.setOnClickListener { makeDrawabled(it) }

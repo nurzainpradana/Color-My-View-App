@@ -7,8 +7,15 @@
     <string name="box_five">Box Five</string>
     <string name="how_to_play">How To Play:</string>
     <string name="tap_the_boxes_and_buttons">Tap the screen and buttons</string>
+
     <string name="button_red">RED</string>
     <string name="button_yellow">YELLOW</string>
     <string name="button_green">GREEN</string>
+
+    <string name="checkbox_one">Box One</string>
+    <string name="checkbox_two">Box Two</string>
+    <string name="checkbox_three">Box Three</string>
+    <string name="checkbox_four">Box Four</string>
+    <string name="checkbox_five">Box Five</string>
 
 </resources>

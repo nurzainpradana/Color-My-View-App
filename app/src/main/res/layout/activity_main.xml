@@ -139,4 +139,61 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/yellow_button" />
 
+    <CheckBox
+        android:id="@+id/checkBoxOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/checkbox_one"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxTwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_text"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <CheckBox
+        android:id="@+id/checkBoxTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/checkbox_two"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxThree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxOne" />
+
+    <CheckBox
+        android:id="@+id/checkBoxThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/checkbox_three"
+        app:layout_constraintBottom_toTopOf="@+id/red_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTwo" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/checkbox_four"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxFive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_text"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/checkbox_five"
+        app:layout_constraintBottom_toTopOf="@+id/yellow_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxFour"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFour"
+        app:layout_constraintVertical_chainStyle="packed" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
