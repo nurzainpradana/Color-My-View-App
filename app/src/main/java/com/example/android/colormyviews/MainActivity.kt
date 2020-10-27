@@ -119,6 +119,8 @@ class MainActivity : AppCompatActivity() {
         val isChecked: Boolean = checkBox.isChecked
         if (isChecked){
             selectedBox.add(view)
+        } else {
+            selectedBox.remove(view)
         }
     }
 
