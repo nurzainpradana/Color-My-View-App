@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.TextView
+import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
     lateinit var redButton: Button
@@ -18,7 +20,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var boxFourText: TextView
     lateinit var boxFiveText: TextView
 
+    lateinit var checkBoxOne: CheckBox
+    lateinit var checkBoxTwo: CheckBox
+    lateinit var checkBoxThree: CheckBox
+    lateinit var checkBoxFour: CheckBox
+    lateinit var checkBoxFive: CheckBox
+
     lateinit var rootConstraintLayout: View
+
+    lateinit var selectedBox : ArrayList<View>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +48,12 @@ class MainActivity : AppCompatActivity() {
         redButton = findViewById(R.id.red_button)
         yellowButton = findViewById(R.id.yellow_button)
 
+        checkBoxOne = findViewById(R.id.checkBoxOne)
+        checkBoxTwo = findViewById(R.id.checkBoxTwo)
+        checkBoxThree = findViewById(R.id.checkBoxThree)
+        checkBoxFour = findViewById(R.id.checkBoxFour)
+        checkBoxFive = findViewById(R.id.checkBoxFive)
+
         rootConstraintLayout = findViewById(R.id.constraint_layout)
 
         val clickableViews: List<View> =
@@ -54,6 +70,8 @@ class MainActivity : AppCompatActivity() {
         for (item in clickableViews){
             item.setOnClickListener { makeDrawabled(it) }
         }
+
+        selectedBox = ArrayList()
     }
 
     private fun makeDrawabled(view: View){
@@ -64,6 +82,10 @@ class MainActivity : AppCompatActivity() {
             R.id.box_three_text -> view.setBackgroundResource(R.drawable.gambar_tiga)
             R.id.box_four_text -> view.setBackgroundResource(R.drawable.gambar_empat)
             R.id.box_five_text -> view.setBackgroundResource(R.drawable.gambar_lima)
+
+            R.id.yellow_button -> makeCheckBoxColored(Color.YELLOW)
+            R.id.red_button -> makeCheckBoxColored(Color.RED)
+            R.id.green_button -> makeCheckBoxColored(Color.GREEN)
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
@@ -79,5 +101,30 @@ class MainActivity : AppCompatActivity() {
             else -> view.setBackgroundColor(Color.LTGRAY)
         }
 
+    }
+
+    fun onCheckBoxClicked(view: View) {
+        if(view is CheckBox){
+            when(view){
+                checkBoxOne -> checkAndAddToArrayList(checkBoxOne, boxOneText)
+                checkBoxTwo -> checkAndAddToArrayList(checkBoxTwo, boxTwoText)
+                checkBoxThree -> checkAndAddToArrayList(checkBoxThree, boxThreeText)
+                checkBoxFour -> checkAndAddToArrayList(checkBoxFour, boxFourText)
+                checkBoxFive -> checkAndAddToArrayList(checkBoxFive, boxFiveText)
+            }
+        }
+    }
+
+    fun checkAndAddToArrayList(checkBox : CheckBox, view: View){
+        val isChecked: Boolean = checkBox.isChecked
+        if (isChecked){
+            selectedBox.add(view)
+        }
+    }
+
+    fun makeCheckBoxColored(color: Int){
+        for (item in selectedBox){
+            item.setBackgroundColor(color)
+        }
     }
 }
