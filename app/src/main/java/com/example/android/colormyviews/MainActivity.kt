@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Membuat Array List
-        selectedBox = ArrayList()
+        selectedBox =  ArrayList()
     }
 
     private fun makeDrawabled(view: View){
